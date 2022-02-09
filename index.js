@@ -19,7 +19,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const callbackURL = 'http://127.0.0.1:5000/wmb-twitter/us-central1/callback';
+const callbackURL = process.env.CALLBACK_URL;
 
 // STEP 1
 exports.auth = functions.https.onRequest(async (request, response) => {
